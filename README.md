@@ -1,8 +1,7 @@
-# React + Vite
+# Problems
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Problem-1
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- I implemented name and status state to store the new user name and the status
+- I defined a userList state that will store the info of all the users
+- users list will be filtered based on the show state and thus which ever button is clicked that user with that status will be shown
