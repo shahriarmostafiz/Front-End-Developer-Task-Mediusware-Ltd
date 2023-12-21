@@ -5,10 +5,10 @@ const Problem1 = () => {
     const [show, setShow] = useState('all');
     const [userName, setName] = useState(" ")
     const [userStatus, SetUserStatus] = useState(" ")
+    const [userList, setUserList] = useState([])
 
     const handleClick = (val) => {
         setShow(val);
-        SetUserStatus(val)
     }
 
     const handleSubmit = (e) => {
@@ -17,8 +17,23 @@ const Problem1 = () => {
         const status = e.target.Status.value
         setName(name),
             SetUserStatus(status)
+
+        setUserList([...userList, { name, status }]);
+
+        // Reset form and state
+        e.target.reset();
+        setName('');
+        setUserStatus('');
+        e.target.reset();
     }
 
+    const filteredUsers = userList.filter(user => {
+        if (show === 'all') {
+            return true;
+        } else {
+            return user.status === show;
+        }
+    });
     return (
 
         <div className="container">
@@ -62,8 +77,12 @@ const Problem1 = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <td>{userName}</td>
-                            <td>{userStatus}</td>
+                            {filteredUsers.map((user, index) => (
+                                <tr key={index}>
+                                    <td>{user.name}</td>
+                                    <td>{user.status}</td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
