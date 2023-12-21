@@ -33,7 +33,7 @@ const ModalInfo = ({ contact }) => {
     }
     const closeModalC = () => {
         setShowModalC(false);
-        console.log("closing modal 3 ");
+        console.log("closing modal 3");
     }
 
     return (
